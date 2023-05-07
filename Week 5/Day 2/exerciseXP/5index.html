@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    Exercise 5 : Event Listeners
+
+Instructions
+
+Add many events listeners to one element on your webpage. Use the click, mouseover, mouseout and dblclick events.
+Each listener should do a different thing, for instance - change position x, change position y, change color, change the font size… and more.
+   
+    --></body>
+    <h1 id="ib">Ibrahima <span>Kake</span> </h1>
+
+</body>
+<script>
+let H1 = document.getElementById("ib")
+let span = document.getElementsByTagName("span")[0]
+H1.addEventListener("click",clickRespond)
+H1.addEventListener("mouseover",mouseoverRespond)
+
+H1.addEventListener("mouseout",mouseoutRespond)
+
+H1.addEventListener("dblclick",dblclikRespond)
+
+function clickRespond(){
+    H1.style.fontSise= "bold"
+    H1.style.position="absolute"
+    span.style.position="relative"
+    H1.style.border="6px solid blue"
+    H1.style.fontFamily= "cursive"
+}
+function mouseoverRespond(){
+    H1.style.color= "#ADD8E6"
+    H1.style.transition= "width 2s"
+   
+}
+
+function mouseoutRespond(){
+    H1.style.color="black"
+   
+}
+function dblclikRespond(){
+    H1.style.color="yellow"
+}
+
+
+    
+</script>
+</html>

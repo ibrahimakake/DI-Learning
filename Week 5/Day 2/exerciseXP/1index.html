@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  Exercise 1 : Change The Article
+
+Instructions
+
+Copy the code below, into a structured HTML file:
+
+1. Using a DOM property, retrieve the h1 and console.log it.
+
+2. Using DOM methods, remove the last paragraph in the <article> tag.
+
+3. Add a event listener which will change the background color of the h2 to red, when it’s clicked on.
+
+4. Add an event listener which will hide the h3 when it’s clicked on (use the display:none property).
+
+5. Add a <button> to the HTML file, that when clicked on, should make the text of all the paragraphs, bold.
+
+BONUS : When you hover on the h1, set the font size to a random pixel size between 0 to 100.(Check out this documentation)
+
+BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fade css animation” on Google)
+
+-->
+
+
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+    </article>
+
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+      </form> 
+      <ul class="usersAnswer"></ul>
+
+     
+       <script>
+
+
+        
+        let H1 = document.getElementsByTagName("h1");
+        console.log(H1);
+
+        let Article = document.body.firstElementChild
+      
+      Article.lastChild.remove();  
+       
+      let H2 = Article.children[1];
+       H2.addEventListener("click", change1);
+
+     function change1(e){
+        H2.style.background = "red"
+     }
+     let H3 = Article.children[2];
+       H3.addEventListener("click", change2);
+
+     function change2(e){
+        H3.style.display ="none"
+     }
+     
+
+     let Button = document.createElement("button");
+      Article.appendChild(Button);
+     
+     Button.innerHTML= "Clik !"
+
+     let paragraphs = document.querySelectorAll("p");
+
+     
+     Button.addEventListener("click", hop)
+    
+     function hop(){
+        for(let paragraph of paragraphs){
+        paragraph.style.fontWeight="bold"
+       
+       }
+     }
+      
+       
+       console.log("hello")
+
+       H1[0].addEventListener("mouseover",Pixel)
+
+
+       function Pixel(){
+        this.style.fontSize = Math.floor(Math.random()* 101) + "px"
+       
+       }
+      H2.addEventListener("mouseover",yes)
+      function yes(){
+        H2.style.opacity = 0.6
+      }
+
+
+
+     
+
+     
+
+
+
+
+     
+      
+      
+
+    </script>
+</body>
+</html>
+

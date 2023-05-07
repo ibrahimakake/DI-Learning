@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Exercise 2 : Work With Forms
+
+Instructions
+
+Copy the code below, into a structured HTML file:
+
+1. Retrieve the form and console.log it.
+
+2. Retrieve the inputs by their id and console.log them.
+
+3. Retrieve the inputs by their name attribute and console.log them.
+
+4. When the user submits the form (ie. submit event listener)
+use event.preventDefault(), why ?
+get the values of the input tags,
+make sure that they are not empty,
+create an li per input value,
+then append them to a the <ul class="usersAnswer"></ul>, below the form.
+The output should be :
+
+<ul class="usersAnswer">
+    <li>first name of the user</li>
+    <li>last name of the user</li>
+</ul>
+  
+
+-->
+<form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit" id="submit">
+  </form> 
+  <ul class="usersAnswer"></ul>
+<script>
+
+let form = document.forms[0]
+    
+    let input1 = document.getElementById("fname")
+    let input2 = document.getElementById("lname")
+    let input3 = document.getElementById("submit")
+
+    console.log(input1,input2,input3)
+    
+    let input11 = form.elements.name =fname;
+    let input12 = form.elements.name =lname;
+    let input13 = form.elements.name =submit;
+    
+    console.log(input11,input12,input13)
+
+    form.addEventListener("submit", submission)
+
+    function submission(e){
+     
+       e.preventDefault();
+       input1.value;
+       input2.value;
+   
+       console.log( input1.value,input2.value)
+
+       if (input1.value==="" || input2.value===""){
+           alert("please fill...")
+       }
+       else{
+           let Ul = document.getElementsByClassName("usersAnswer")
+           let li1 = document.createElement("li")
+           li1.innerHTML=input1.value;
+               
+            let li2 = document.createElement("li")
+            li2.innerHTML=input2.value
+            Ul.appendChild(li1.li2)
+       }
+
+       
+    }
+      
+   
+
+
+
+</script>
+</body>
+</html>
