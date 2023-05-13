@@ -44,14 +44,16 @@ console.log(people);
  
 console.log(people.indexOf("Mary"))
 
-console.log(people.slice(1,4))
+console.log(people.slice(0,4))
 
 
-console.log(people.indexOf("Foo")) // it return -1 because "Foo" is not defined
+console.log(people.indexOf("Foo")) // it return -1 because "Foo" is not defined or is not in the array.
 
-let last = people[people.length-1]
-console.log(people.indexOf(last))
-console.log(people.length);
+let last = people.length
+console.log(last)
+
+console.log(last-1)
+// indexof the last element is equal to Array.length-1
 
 
 // Part II - Loops
@@ -61,11 +63,11 @@ for( let a of people){
 
 }
 
-for (let k = people.indexOf("Mary") ; k <= people.length; k++){
-    if(k > people.indexOf("Jason")){
+for (let k = people[0] ; k <= people.length; k++){
+    if(k < people.indexOf("jason")){
         break;
     }
-    console.log(people[k]);
+    console.log(k);
    
 }
 
@@ -115,11 +117,15 @@ Tip : Which while loop is more relevant for this situation?
  */
 
 
-/*let answerNumber= null;
+let answerNumber= null;
 while( answerNumber<10){
      let userAnswer = prompt("please, enter a number")
      answerNumber = Number(userAnswer)
 }
+ 
+
+
+
    
 
    /*🌟 Exercise 4 : Building Management
@@ -177,8 +183,11 @@ console.log("The number of floors is " +noff)
 
 let appF1= building.numberOfAptByFloor.firstFloor
 
-console.log(appF1)
+console.log(" The number of apartments on the first floor is " + appF1)
 
+let app3 = building.numberOfAptByFloor.thirdFloor
+console.log("The number of apartments on the third floor is "+ app3)
+ 
 let nS= building.nameOfTenants[1]
 
 let nSr = building.numberOfRoomsAndRent.dan[0]
@@ -190,9 +199,9 @@ let danRent = building.numberOfRoomsAndRent.dan[1]
 let sum = sarahRent+ davidRent
 if (sum>danRent){
 
-    console.log("The sum of Sarah' and Dvid's rent is bigger than Dan's rent")
+    console.log("The sum of Sarah' and David's rent is bigger than Dan's rent")
 
-   console.log("So Dan's rent is now: "+ (danRent+(1200-danRent)))
+   console.log("So Dan's rent will increase by : " + (1200-danRent))
 }
 
 /*🌟 Exercise 5 : Family

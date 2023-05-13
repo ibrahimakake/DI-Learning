@@ -22,12 +22,16 @@ Example:
   --> the result is : 'This dinner is bad !'*/
 
 let sentence = "MMA is not that bad , I like it"
-let  wordNot = sentence.indexOf("not")
-let wordBad = sentence.indexOf("bad")
+let  wordNot = sentence.search("not")
+let wordBad = sentence.search("bad")
+
+/*console.log(sentence.slice(wordBad,28))*/
+
 if( wordBad > wordNot){
-    console.log("MMA is good, I like it.")
+  
+   console.log(sentence.replace("not that bad","good"))
 
 }
 else{
-    console.log("MMA is not that bad, I like it.")
+    console.log(sentence)
 }

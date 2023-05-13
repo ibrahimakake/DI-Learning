@@ -14,10 +14,27 @@ Do this Daily Challenge by yourself, without looking at the answers on the inter
 
 
 
-let i ;
+let number = 7 ;
+let stars = ""
 
-for (let i = Array[0]; i<Array.length; i++){
-document.write("*")
+for (let i = 0; i< number; i++){
+   console.log( stars = stars +" * ")
 }
 
 
+// neste loop
+
+let maxNumber = 6
+
+for (let i = 0;i < maxNumber;i++){
+     
+    const numberofStars = i + 1
+    let lineofStars =""
+    for (let j= 0;j < numberofStars;j++){
+        lineofStars = lineofStars + " * "
+    } 
+        console. log (lineofStars)
+  
+}
+   
+   

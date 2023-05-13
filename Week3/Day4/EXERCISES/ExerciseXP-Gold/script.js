@@ -12,19 +12,25 @@ let y = 2;
 You should display:
 x is the biggest number.   */
 
-let x = 8;
-let y = 5;
+let x = 5;
+let y = 2;
  
 if( x>y){
     console.log("x is the biggest number")
 }
-else{
-    console.log("unknown")
-}
+
 
 // Exercise 2: Chihuahua
 
+/*Instructions
 
+Create a variable called newDog where it’s value is “Chihuahua”.
+Check and display how many letters are in newDog.
+Display the newDog variable in uppercase and then in lowercase (no need to create new variables, just console.log twice).
+Check if the variable newDog is equal to “Chihuahua”
+if it does, display ‘I love Chihuahuas, it’s my favorite dog breed’
+else, console.log ‘I dont care, I prefer cats’
+ */
 
  let newDog = "Chihuahua";
 
@@ -54,7 +60,7 @@ let a = prompt("enter a number ")
 if ( a % 2 === 0 ){
     alert("a is an even number");
 }
-else if (a % 2 != 0)   {
+else if (a % 2 !== 0)   {
     alert("a is an odd number");
 }
 else{
@@ -68,7 +74,7 @@ Below is an array of users that are online in a group chat.
 
 const users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
 Using the array above, console.log the number of users that are connected to the group chat based on the following rules:
-If there is no users (the users array is empty), console.log “users.length”.
+If there is no users (the users array is empty), console.log “no one is online”.
 If there is 1 user, console.log “<name_user> is online”.
 If there are 2 users, console.log “<name_user1> and <name_user2> are online”.
 If there are more than 2 users, console.log the first two names in the users array and the number of additional users online.
@@ -78,18 +84,18 @@ name_user1, name_user2 and 3 more are online*/
 const users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
 
 console.log(users.length)
-if (users.length===0){
-    console.log("users.length")
+if (users.length==0){
+    console.log("no one is online")
    
 }
 else if(users.length ===1) {
-console.log( "Lea123" + " is online")
+console.log( users[0] + " is online")
 }
 else if(users.length ===2) {
-    console.log( "Lea123" + " and "+ " Princess45 are online")
+    console.log( users[0] + " and "+users[1]+ " are online")
  }
 else if(users.length>2) {
-        console.log( "Lea123,"+ " Princess45" + " and one more are online.")
+        console.log( users[0] +users[1] + " and " + 3 +" more are online.")
 }   
 
 
