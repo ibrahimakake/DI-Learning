@@ -46,10 +46,12 @@ let lengthOfTheLongestWord = getlengthOfTheLongestWord();
  
 
 
+let delimitersStars = CreateDelimitersRows();
+console.log("delimitersStars : " + delimitersStars);
 
 displayRows();
 function displayRows(){
-    let delimetersStars = CreateDelimetersRows();
+    let delimetersStars = CreateDelimitersRows();
     console.log(delimetersStars);
 for(let  word of userWords){
     displayWords(word);
@@ -64,15 +66,35 @@ for(let  word of userWords){
 
 // !! let numberOfStars1_2 = lengthOfTheLongestWord + 4;
 
-// let display delimeters stars 
 
-// !!let delimetersStars = CreateDelimetersRows();
+
+// let first find the length of the longest word
+
+// !!! let lengthOfTheLongestWord = getlengthOfTheLongestWord();
+function getlengthOfTheLongestWord(){
+let lengthOfTheLongestWord=0;
+   
+    for( let word of userWords){
+       
+        let lengthOfWord = word.length;
+        if(lengthOfWord > lengthOfTheLongestWord){
+            lengthOfTheLongestWord = lengthOfWord
+    
+         }
+        return lengthOfTheLongestWord;
+        }
+    
+} 
+
+// let display delimiters stars 
+
+// !!let delimitersStars = CreateDelimitersRows();
 
 //console.log(delimetersStars)
 
 
-function  CreateDelimetersRows(){
-    let lengthOfTheLongestWord = getlengthOfTheLongestWord();
+function  CreateDelimitersRows(){
+   
     let numberOfStars1_2 = lengthOfTheLongestWord + 4;
      let row = "";
 for( let i = 0; i < numberOfStars1_2; i++){
@@ -80,28 +102,9 @@ for( let i = 0; i < numberOfStars1_2; i++){
 }
 return row;
 }
-CreateDelimetersRows()
 
-// let first find the length of the longest word
 
-// !!! let lengthOfTheLongestWord = getlengthOfTheLongestWord();
 
-function getlengthOfTheLongestWord(){
-    let lengthOfTheLongestWord=0;
-    for( let word of userWords){
-        console.log(word)
-        
-        let lengthOfWord = word.length;
-        if(lengthOfWord > lengthOfTheLongestWord){
-            lengthOfTheLongestWord = lengthOfWord
-    
-         }
-        console.log("the lenth of the longest wors is : " + lengthOfTheLongestWord)
-        }
-    
-} getlengthOfTheLongestWord()
-
-// display rows
 
 function displayWords(word){
    
@@ -109,4 +112,5 @@ function displayWords(word){
     let emptyRow = " ".repeat(spacesAround+1)
     console.log("* "+word + emptyRow + " *");
 }
+
 
