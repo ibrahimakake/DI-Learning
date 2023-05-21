@@ -33,53 +33,114 @@ Call the function totalVacationCost()
 Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.
  */
 
+//hotelCost()
+
+let userAnswer;
+
+let destination ;
+
+let answer;
+
+
+function totalVacationCost(){
+  
+   while(!isJustNumbers(userAnswer) || userAnswer==""){
+     userAnswer = prompt("How many nigths are you gonna stay ? ")
+       }
+
+       
+ 
+       do { destination = prompt(" What is your destination ? ")
+     
+        }while(destination == "" || isJustString(destination) )
+       
+       
+        do{
+           
+           answer= prompt("For how many days do wanna rent a car ?")
+        }while(!justNumbers(answer) || answer=="")  
+
+let hotel = hotelCost()
+console.log("Your hotel cost is: " +"$"+ hotel)
+    
+  let price = planeRideCost()
+ console.log("Your destination price is: $"+ price)
+
+ let final = rentalCarCost()
+console.log("Your rental cost is: $"+ final)
+
+
+let totalCost = hotel+price+final
+
+console.log("Your vaction cost is: $"+ totalCost)
+
+
+
+}
+ totalVacationCost()
+
 hotelCost()
 
  function hotelCost(){
-   let userAnswer1;
-   while(!isJustNumbers(userAnswer1) || isJustNumbers("")){
-     userAnswer1 = prompt("How many nigths are you gonna stay ? ")
+  
+   let numberOfNigth = Number(userAnswer)
        
-    }
-   let numberOfNigth = Number(userAnswer1)
-       let nigthCost = 140
+   let nigthCost = 140
        let totalCost = numberOfNigth*nigthCost;
-       console.log("The total price is : " +"$"+ totalCost )
+       return totalCost 
 
  }
 
+function isJustNumbers(num){
+   let regex = new RegExp(/^[0-9]*$/)
+   return regex.test(num)
+}
 
- function isJustNumbers(num){
-    let regex1 = new RegExp(/^[0-9]*$/)
-    return regex1.test(num)
- }
+//planeRideCost()
 
- let price = planeRideCost()
-
- console.log("the price is " + price)
-
+ 
+ 
 function planeRideCost(){
-    let userAnswer2;
- 
-    while(isJustString(userAnswer2)){
-      userAnswer2 = prompt("What is your destination ?")
-    }
-
-   if(userAnswer2 === "London"){
-    return "$138"
-   }
-else if(userAnswer2 === "Paris"){
-   return "$220"
    
-}else{
-   return "$300"
+  
+ if(destination === "London"){
+    return 138
+   }else if(destination === "Paris"){
+   return 220
+   }else{
+   return 300
+   }
+  
+}
  
+function isJustString(str){
+    let regex = new RegExp(/\d/)
+    return regex.test(str)
+ } 
+
+
+
+// rentalCarCost()
+
+ function rentalCarCost(){
+
+
+let rental=Number(answer)
+let cost = 40
+if(rental<10){
+   return cost*rental
+}else{
+  
+   let discount = cost/10
+  return(cost - discount)*rental
 }
 
-}
 
-
- function isJustString(str){
-    let regex2 = new RegExp(/\d/)
-    return regex2.test(str)
  }
+
+ function justNumbers(numm){
+   let regex = new RegExp(/^[0-9]*$/)
+   return regex.test(numm)
+ }
+
+ 
