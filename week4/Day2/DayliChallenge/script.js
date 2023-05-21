@@ -34,34 +34,8 @@ To do this challenge you only need Javascript(No HTML and no CSS)
 
 
  */
-
-
-let userAnswer = prompt("Please enter words separeterd by commas");
-
-
-let userWords = userAnswer.split(",");
-
-
-let lengthOfTheLongestWord = getlengthOfTheLongestWord();
- 
-
-
-let delimitersStars = CreateDelimitersRows();
-console.log("delimitersStars : " + delimitersStars);
-
-displayRows();
-function displayRows(){
-    let delimetersStars = CreateDelimitersRows();
-    console.log(delimetersStars);
-for(let  word of userWords){
-    displayWords(word);
-
-}
-    console.log(delimetersStars);
-}
- 
-
-
+/*let delimitersStars = CreateDelimitersRows();
+console.log("delimitersStars : " + delimitersStars);*/
 // let asigne the number of stars in the first and the last line
 
 // !! let numberOfStars1_2 = lengthOfTheLongestWord + 4;
@@ -71,26 +45,51 @@ for(let  word of userWords){
 // let first find the length of the longest word
 
 // !!! let lengthOfTheLongestWord = getlengthOfTheLongestWord();
-function getlengthOfTheLongestWord(){
-let lengthOfTheLongestWord=0;
-   
-    for( let word of userWords){
-       
-        let lengthOfWord = word.length;
-        if(lengthOfWord > lengthOfTheLongestWord){
-            lengthOfTheLongestWord = lengthOfWord
-    
-         }
-        return lengthOfTheLongestWord;
-        }
-    
-} 
-
 // let display delimiters stars 
 
 // !!let delimitersStars = CreateDelimitersRows();
 
 //console.log(delimetersStars)
+
+
+let userAnswer = prompt("Please enter words separeterd by commas");
+
+
+let userWords = userAnswer.split(",");
+
+
+
+let lengthOfTheLongestWord = getlengthOfTheLongestWord()
+
+
+
+
+displayRows();
+function displayRows(){
+    let delimetersStars = CreateDelimitersRows();
+    console.log(delimetersStars);
+for(let  word of userWords){
+    displayWords(word)
+}
+    console.log(delimetersStars);
+}
+ 
+
+
+
+function getlengthOfTheLongestWord(){
+let lengthOfTheLongestWord=0;
+   
+    for( let word of userWords){
+       let lengthOfWord = word.length;
+        if(lengthOfWord > lengthOfTheLongestWord){
+            lengthOfTheLongestWord = lengthOfWord
+        }
+    }
+    return lengthOfTheLongestWord;
+} 
+
+
 
 
 function  CreateDelimitersRows(){
@@ -105,12 +104,11 @@ return row;
 
 
 
-
 function displayWords(word){
    
-    let spacesAround = lengthOfTheLongestWord - word.length
-    let emptyRow = " ".repeat(spacesAround+1)
-    console.log("* "+word + emptyRow + " *");
+    let spacesAround = lengthOfTheLongestWord - word.length + 1 ;
+    let emptyRow = " ".repeat(spacesAround)
+    console.log("* "+ word + emptyRow + "*")
 }
 
 

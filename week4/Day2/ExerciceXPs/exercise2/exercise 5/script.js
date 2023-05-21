@@ -26,6 +26,59 @@ After you created the function, invoke it like this:
 changeEnough(4.25, [25, 20, 5, 0])
 The value 4.25 represents the item’s price
 The array [25, 20, 5, 0] represents 25 quarters, 20 dimes, 5 nickels and 0 pennies.
-The function should return true, since having 25 quarters, 20 dimes, 5 nickels and 0 pennies gives you 6.25 + 2 + .25 + 0 = 8.50 which is bigger than 4.25 (the total amount due)
+The function should return true, since having 25 quarters, 20 dimes, 5 nickels and 0 pennies gives you 6.25 + 2 + 0.25 + 0 = 8.50 which is bigger than 4.25 (the total amount due)
 */
+
+function changeEnough(itemPrice,amounOfChange){
+   console.log("The item price is "+ itemPrice)
+   let totalSum= sumResult(amounOfChange)
+     if(itemPrice <= totalSum){
+      console.log("you can afford it !!")
+        return true
+     }else{
+      console.log("you can't afford it !!")
+        return false
+        
+     }
+}
+changeEnough(7,[25,9,32,0])
+
+function sumResult(array){
+    let sum = 0;
+   for(let i=0;i<array.length;i++){
+      let arrayValue = array[i];
+      let change;
+      if(i === 0){
+        change = 0.25
+       
+        console.log("you have "+ arrayValue + " that have the value of "+ change)
+       
+      }else if(i===1){
+         change= 0.10
+        
+         console.log("you have "+ arrayValue + " that have the value of "+ change)
+        
+
+      }else if(i===2){
+        change= 0.05
+        
+        console.log("you have "+ arrayValue + " that have the value of "+ change)
+        
+     
+
+     }else if(i===3){
+        change= 0.01
+       
+        console.log("you have "+ arrayValue + " that have the value of "+ change)
+        
+       }
+       sum = sum + arrayValue*change
+    
+   }
+   console.log("you own " + sum)
+   return sum 
+   
+  
+} 
+
 

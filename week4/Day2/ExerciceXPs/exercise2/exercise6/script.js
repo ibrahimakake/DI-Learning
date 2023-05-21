@@ -32,3 +32,54 @@ Call the function totalVacationCost()
 
 Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.
  */
+
+hotelCost()
+
+ function hotelCost(){
+   let userAnswer1;
+   while(!isJustNumbers(userAnswer1) || isJustNumbers("")){
+     userAnswer1 = prompt("How many nigths are you gonna stay ? ")
+       
+    }
+   let numberOfNigth = Number(userAnswer1)
+       let nigthCost = 140
+       let totalCost = numberOfNigth*nigthCost;
+       console.log("The total price is : " +"$"+ totalCost )
+
+ }
+
+
+ function isJustNumbers(num){
+    let regex1 = new RegExp(/^[0-9]*$/)
+    return regex1.test(num)
+ }
+
+ let price = planeRideCost()
+
+ console.log("the price is " + price)
+
+function planeRideCost(){
+    let userAnswer2;
+ 
+    while(isJustString(userAnswer2)){
+      userAnswer2 = prompt("What is your destination ?")
+    }
+
+   if(userAnswer2 === "London"){
+    return "$138"
+   }
+else if(userAnswer2 === "Paris"){
+   return "$220"
+   
+}else{
+   return "$300"
+ 
+}
+
+}
+
+
+ function isJustString(str){
+    let regex2 = new RegExp(/\d/)
+    return regex2.test(str)
+ }
