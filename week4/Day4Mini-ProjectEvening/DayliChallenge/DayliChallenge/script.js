@@ -63,20 +63,31 @@ let userAnswer = Number(prompt("Please enter a number to begin the game"))
  
 let numberOfBeerToTakeAway = 1;
 
-while( userAnswer > 0){
-    let beer =  getBeer(userAnswer,numberOfBeerToTakeAway);
+do{
+    let Beer =  getBeer(userAnswer,numberOfBeerToTakeAway);
     
-    
-    
-    console.log(beer);
-      
-    userAnswer -= numberOfBeerToTakeAway;
-       
-    numberOfBeerToTakeAway++;
    
+ console.log(Beer);
+
+ userAnswer -= numberOfBeerToTakeAway;
+       
+ numberOfBeerToTakeAway++;
+
+      
+}while( userAnswer > numberOfBeerToTakeAway)
 
 
-}
+let rest= userAnswer-numberOfBeerToTakeAway
+
+let bottleOrBottles = getBottleOrBottles(userAnswer)
+
+let itOrThem =getItOrThem(rest)
+
+console.log(`${userAnswer} ${bottleOrBottles} of beer on the wall
+${userAnswer}  ${bottleOrBottles} of beer
+Take ${userAnswer} down, pass ${itOrThem} around
+${rest-rest} ${ getBottleOrBottles(rest-rest)} of beer on the wall`
+)
 
 //let beer =  getBeer(userAnswer,numberOfBeerToTakeAway)
 
@@ -85,13 +96,16 @@ function getBeer(num,counter){
     let bottleOrBottles = getBottleOrBottles(num);
 
     let itOrThem = getItOrThem(counter);
-      
-      let beer = `${num} ${bottleOrBottles} of beer on the wall
+
+    let rest = num - counter;
+    let beer;
+      if ( num > rest){
+         beer = `${num} ${bottleOrBottles} of beer on the wall
       ${num}  ${bottleOrBottles} of beer
       Take ${counter}  down, pass ${itOrThem} around
-      ${num - counter} ${ getBottleOrBottles(num - counter)} of beer on the wall`;
+      ${rest} ${ getBottleOrBottles(rest)} of beer on the wall`;}
 
-      return beer;
+      return beer
 
 
 }
@@ -118,7 +132,6 @@ function getBottleOrBottles(num){
 }
 
 
-let itOrThem = getItOrThem(counter)
 
 function getItOrThem(counter){
     
