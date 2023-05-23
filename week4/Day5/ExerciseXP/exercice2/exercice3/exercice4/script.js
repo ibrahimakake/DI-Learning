@@ -26,41 +26,72 @@ If the book is already read. Set the color of the book’s details to red.
 
 let allBooks =[
     {
-     title:"Think and Grow Rich",
+     title:"Think and Grow Rich ",
     author:"Napoleon Hill",
     image: "image1.png",
     alreadyRead: false
 },
 {
-    title:"Rich Dad and Poor Dad",
+    title:"Rich Dad Poor Dad",
     author:"Robert Kiyosaki",
     image:"image2.png",
     alreadyRead: true
 }
 ]
-let div = document.querySelector(".listBooks")
 
-let table = document.createElement("table")
-table.innerHTML=`
-<thead>
-<tr>
-<th colspan = "3" > Books information <\th>
-<\tr>
-<\thead>
-<tbody>
-<tr>
-<td>${allBooks[0].title} written by ${allBooks[0].author}<\td>
-<td><img src"${allBooks[0].image}"\><\td>
-<td>Already read : ${allBooks[0].alreadyRead}<\td>
-<\tr>
+// Create a new table element
+const table = document.createElement("table");
 
-<tr>
-<td>${allBooks[1].title} written by ${allBooks[1].author}<\td>
+// Add the table to the div element
+document.querySelector("div").appendChild(table);
 
-<td>${allBooks[1].image}<\td>
+// Loop through the books array
+for (let book of allBooks) {
 
-<td>${allBooks[1].alreadyRead}<\td>
-<\tr>
-<\tbody>`
+  // Create a new row element
+  const row = document.createElement("tr");
 
-div?.appendChild(table)
+  // Add the book's title to the row
+  const titleCell = document.createElement("td");
+  titleCell.textContent = book.title;
+  row.appendChild(titleCell);
+
+  // Add the book's author to the row
+  const authorCell = document.createElement("td");
+  authorCell.textContent = book.author;
+  row.appendChild(authorCell);
+
+  // Add the book's image to the row
+  const imageCell = document.createElement("td");
+  const image = document.createElement("img");
+  image.src = book.image;
+  image.width = 100;
+  imageCell.appendChild(image);
+  row.appendChild(imageCell);
+
+  // If the book is already read, set the color of the book's details to red
+  if (book.alreadyRead) {
+    row.style.color = "red";
+  }
+
+  // Add the row to the table
+  table.appendChild(row);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
