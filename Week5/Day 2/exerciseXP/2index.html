@@ -37,23 +37,18 @@ The output should be :
     <label for="fname">First name:</label><br>
     <input type="text" id="fname" name="fname"><br>
     <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"><br><br>
+    <input type="text" id="lname" name="name"><br><br>
     <input type="submit" value="Submit" id="submit">
   </form> 
   <ul class="usersAnswer"></ul>
 <script>
 
 let form = document.forms[0]
+console.log(form)
     
-    let input1 = document.getElementById("fname")
-    let input2 = document.getElementById("lname")
-    let input3 = document.getElementById("submit")
-
-    console.log(input1,input2,input3)
-    
-    let input11 = form.elements.name =fname;
-    let input12 = form.elements.name =lname;
-    let input13 = form.elements.name =submit;
+    let input11 = form.elements.fname;
+    let input12 = form.elements.lname;
+    let input13 = form.elements.submit;
     
     console.log(input11,input12,input13)
 
@@ -61,23 +56,27 @@ let form = document.forms[0]
 
     function submission(e){
      
-       e.preventDefault();
-       input1.value;
-       input2.value;
+       e.preventDefault();//to avoid refreshing 
+      /* input11.value;
+       input12.value;
    
-       console.log( input1.value,input2.value)
+       console.log( input11.value)
+       console.log(input12.value)*/
 
-       if (input1.value==="" || input2.value===""){
+       if (input11.value==="" || input12.value===""){
            alert("please fill...")
        }
        else{
-           let Ul = document.getElementsByClassName("usersAnswer")
+           let Ul = document.getElementsByClassName("usersAnswer")[0]
+          
            let li1 = document.createElement("li")
-           li1.innerHTML=input1.value;
+           Ul.appendChild(li1)
+           li1.innerHTML=input11.value;
                
-            let li2 = document.createElement("li")
-            li2.innerHTML=input2.value
-            Ul.appendChild(li1.li2)
+           let li2 = document.createElement("li")
+           Ul.appendChild(li2)
+           li2.innerHTML=input12.value
+           // Ul.appendChild(li1,li2)
        }
 
        

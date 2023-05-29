@@ -60,17 +60,23 @@ Write a JavaScript program to calculate the volume of a sphere. Use the code bel
     <input type="submit" value="Calculate" id="submit">    
 </form> 
 <script>
-    let radius = document.getElementById("radius")
 
-    let volume= document.getElementById("volume")
+let form = document.forms.MyForm;
+
+    let radius = form.elements.radius
+
+    let volume= form.elements.volume
    
-     let button = document.getElementById("submit")
+     let button = form.elements.submit
 
-     button.addEventListener("click",calculate)
+     form.addEventListener("submit",calculate)
+     
     function calculate(e){
         e.preventDefault()
-
-        volume.value=((4/3)*Math.PI*Math.pow(radius.value,3)).toFixed(2)
+         
+       // sphere's volum formula : V=3/4πr^3
+       
+       volume.value=((4/3)*Math.PI*Math.pow(radius.value,3)).toFixed(2)
       
     }
     calculate()

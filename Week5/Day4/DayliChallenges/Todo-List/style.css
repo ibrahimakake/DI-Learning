@@ -1,0 +1,38 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+h2{
+    font-family:sans-serif ;
+}
+
+#form{
+    background-color: white;
+    display: block;
+   min-height:45x;
+   
+}
+
+#button{
+    
+    border: none;
+    background-color: white;
+    color: rgb(69, 69, 217);
+    font-size: 20px;
+    
+}
+#input{
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+}
+.listTask{
+    display: flex;
+    flex-direction: row;
+}

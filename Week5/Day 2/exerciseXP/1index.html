@@ -56,17 +56,20 @@ BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fa
 
 
         
-        let H1 = document.getElementsByTagName("h1");
+        let H1 = document.querySelector("h1");
         console.log(H1);
 
         let Article = document.body.firstElementChild
+       
       
-      Article.lastChild.remove();  
+      Article.lastElementChild.remove();  
        
       let H2 = Article.children[1];
+     
        H2.addEventListener("click", change1);
 
      function change1(e){
+      //e.preventDefault()
         H2.style.background = "red"
      }
      let H3 = Article.children[2];
@@ -78,7 +81,7 @@ BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fa
      
 
      let Button = document.createElement("button");
-      Article.appendChild(Button);
+      document.body.appendChild(Button);
      
      Button.innerHTML= "Clik !"
 
@@ -88,16 +91,18 @@ BONUS : When you hover on the 2nd paragraph, it should fade out (Check out “fa
      Button.addEventListener("click", hop)
     
      function hop(){
-        for(let paragraph of paragraphs){
+       for(let paragraph of paragraphs){
         paragraph.style.fontWeight="bold"
        
        }
-     }
+       
+       }
+     
       
        
-       console.log("hello")
+    
 
-       H1[0].addEventListener("mouseover",Pixel)
+       H1.addEventListener("mouseover",Pixel)
 
 
        function Pixel(){
