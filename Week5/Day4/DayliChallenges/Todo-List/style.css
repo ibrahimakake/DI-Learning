@@ -16,8 +16,10 @@ h2{
     background-color: white;
     display: block;
    min-height:45x;
+   outline: none;
    
 }
+
 
 #button{
     

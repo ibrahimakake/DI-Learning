@@ -34,7 +34,6 @@ BONUS II (not mandatory):
 Create a function named deleteTask(), that as soon as the user clicks on the “X” button, delete that specific task from the array listTasks.
 */
 
-let tasks = [];
 
 //let button = document.getElementById("button")
 
@@ -55,7 +54,8 @@ form.addEventListener("submit",addTasks)
 
 function addTasks(e){
     
-   e.preventDefault()
+    e.preventDefault()
+    let tasks = [];
     
    
    
@@ -64,17 +64,21 @@ function addTasks(e){
     }
     
     
-    for(let task of tasks){
+    for(let task of tasks){ 
+        let divForm = document.createElement("div")
+        divForm.setAttribute("class","divForm")
+        let form3= document.createElement("form")
+        document.body.appendChild(form3)
         let label = document.createElement("label")
         label.setAttribute("id","label")
         let input2 = document.createElement("input")
         input2.setAttribute("type","checkbox")
         input.setAttribute("id","input2")
         let i = document.createElement("i")
-        i.setAttribute("class","fa fa-trash fa-1x text-danger")
-        form2.appendChild(i)
-        form2.appendChild(input2)
-        form2.appendChild(label)
+        i.setAttribute("class","fa-sharp fa-solid fa-circle-xmark")
+        form3.appendChild(i)
+        form3.appendChild(input2)
+        form3.appendChild(label)
         label.innerHTML= task
         
        // let icon = document.createElement("p")
