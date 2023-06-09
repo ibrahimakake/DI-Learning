@@ -53,7 +53,7 @@ for (let book of allBooks) {
 
   // Add the book's title to the row
   const titleCell = document.createElement("td");
-  titleCell.textContent = book.title;
+  titleCell.textContent = book.title + " was written by ";
   row.appendChild(titleCell);
 
   // Add the book's author to the row
