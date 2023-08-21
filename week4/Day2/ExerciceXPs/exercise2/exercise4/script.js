@@ -37,55 +37,31 @@ const stock = {
     "apple": 0,
     "pear": 12,
     "orange": 32,
-    "blueberry":1
-}  
+    "blueberry": 1
+};
 
 const prices = {    
     "banana": 4, 
     "apple": 2, 
     "pear": 1,
     "orange": 1.5,
-    "blueberry":10
-} 
-let shoppingList = ["banana","orange","apple"];
+    "blueberry": 10
+};
 
-function myBill(){
+let shoppingList = ["banana", "orange", "apple"];
 
-    
+function myBill() {
+    let total = 0;
 
-       let sum = 0 ;
-     
-        for(let item of shoppingList){
-
-           
-
-            let itemQuantity = stock[item];
-    
-            if (itemQuantity > 0 ){
-    
-            
-               itemQuantity = itemQuantity - 1;
-              let itemPrice = prices[item]
-    
-              sum = sum+ itemPrice
-                console.log("stock of  " + item + " in the stock is " + itemQuantity)
-                console.log("The price of "+ item + " is "+ itemPrice)
-               
-            }
-            else{
-                console.log("There is no "+ item + " in the stock")
-               
-            }
-            
-          
-           
-    
+    for (let item of shoppingList) {
+        if (item in stock && stock[item] > 0) {
+            total += prices[item];
+            stock[item]--; // Decrease the stock by 1
         }
-       console.log("the total of my shopList is " + sum)
-   
+    }
 
-   
+    return total;
 }
-myBill()
 
-
+const totalPrice = myBill();
+console.log("Total Price:", totalPrice);

@@ -33,7 +33,7 @@ To do this challenge you only need Javascript(No HTML and no CSS)
 
 
 
- */
+
 /*let delimitersStars = CreateDelimitersRows();
 console.log("delimitersStars : " + delimitersStars);*/
 // let asigne the number of stars in the first and the last line
@@ -51,7 +51,7 @@ console.log("delimitersStars : " + delimitersStars);*/
 
 //console.log(delimetersStars)
 
-
+/*
 let userAnswer = prompt("Please enter words separeterd by commas");
 
 
@@ -121,35 +121,35 @@ function displayWords(word){
     
    
         console.log(("* "+ word + emptyRow + " *"))
+} */
+
+
+function createFrame(words) {
+    const wordArray = words.split(',');
+    let longestWordLength = 0;
+
+    for (const word of wordArray) {
+        const trimmedWord = word.trim();
+        if (trimmedWord.length > longestWordLength) {
+            longestWordLength = trimmedWord.length;
+        }
+    }
+
+    const frameWidth = longestWordLength + 4; // 2 extra spaces on each side
+
+    const horizontalLine = '*'.repeat(frameWidth);
+
+    console.log(horizontalLine);
+
+    for (const word of wordArray) {
+        const trimmedWord = word.trim();
+        const padding = ' '.repeat(longestWordLength - trimmedWord.length);
+        console.log(`* ${trimmedWord}${padding} *`);
+    }
+
+    console.log(horizontalLine);
 }
-/*var words = prompt("Enter a several words :")
-var strArray = words.split(' ')
-var lengt = 0;
-var FLStar = '';
-function longerWord() {
-   for (let i in strArray) {
-      if (strArray[i].length > lengt) {
-         lengt = strArray[i].length;
-      }
-      else {
-         continue;
-      }
-   }
-   for (let i = 0; i < Number(lengt) + 4; i++) {
-      FLStar += "*";
-   }
-   console.log(FLStar);
-}
-longerWord();
-for (let k in strArray) {
-   var spaces = '';
-   var m = strArray[k].length
-   for (let t = 0; t < (Number(lengt) - Number(m)); t++) {
-      spaces += " ";
-   }
-   var comp = "* " + strArray[k] + spaces + " *";
-   console.log(comp)
-   FLStar = '';
-}
-longerWord();*/
+
+const userInput = prompt("Enter words separated by commas:");
+createFrame(userInput);
 

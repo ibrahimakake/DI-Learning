@@ -44,7 +44,7 @@ console.log(people);
  
 console.log(people.indexOf("Mary"))
 
-console.log(people.slice(0,4))
+console.log(people.slice(1,4))
 
 
 console.log(people.indexOf("Foo")) // it return -1 because "Foo" is not defined or is not in the array.
@@ -63,13 +63,15 @@ for( let a of people){
 
 }
 
-for (let k = people[0] ; k <= people.length; k++){
-    if(k < people.indexOf("jason")){
-        break;
-    }
-    console.log(k);
-   
+const people = ["Greg", "Mary", "Devon", "James"];
+
+for (let i = 0; i < people.length; i++) {
+  console.log(people[i]);
+  if (people[i] === "Devon") {
+    break; 
+  }
 }
+
 
 
 
@@ -117,12 +119,16 @@ Tip : Which while loop is more relevant for this situation?
  */
 
 
-let answerNumber= null;
-while( answerNumber<10){
-     let userAnswer = prompt("please, enter a number")
-     answerNumber = Number(userAnswer)
+let userInput = prompt("Please enter a number:");
+let number = parseFloat(userInput); 
+
+while (typeof number === 'number' && number < 10) {
+  userInput = prompt("Please enter a new number:");
+  number = parseFloat(userInput);
 }
- 
+
+console.log("The number is now greater than or equal to 10.");
+
 
 
 
@@ -238,15 +244,16 @@ const details = {
     my: 'name',
     is: 'Rudolf',
     the: 'raindeer'
+  };
+  
+  let sentence = '';
+  
+  for (let key in details) {
+    sentence += key + ' ' + details[key] + ' ';
   }
-
-  let x = details.my;
-let y = details.is;
-let z = details.the;
-
-
-console.log(`my ${x} is ${y} the ${z}` )
-
+  
+  console.log(sentence);
+  
 /*Exercise 7 : Secret Group
 
 Instructions
@@ -258,11 +265,15 @@ Console.log the name of their secret society. The output should be “ABJKPS”
  */
 
 const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"]
+
+let society = ''
 for(let i in names){
-    console.log(names[i][0])
+   society += names[i][0]
    
     // names[i][0].sort();
 }
+
+console.log(society)
 
 
 

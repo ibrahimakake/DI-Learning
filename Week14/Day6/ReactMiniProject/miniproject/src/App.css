@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quote-container {
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin: 50px auto;
+  width: 60%;
+  max-width: 500px;
+  
+}
+.quote-header {
+ 
+  font-size: 24px;
+}
+.quote-author {
+  font-size: 18px;
+}
+.new-quote-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

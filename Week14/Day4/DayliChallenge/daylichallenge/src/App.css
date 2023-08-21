@@ -1,0 +1,30 @@
+.languages {
+  display: flex;
+  
+ flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+
+}
+
+.language {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffebcd;
+  padding: 10px;
+  margin: 10px;
+  min-width: 400px;
+}
+
+
+
+.language > button{
+  background-color: transparent;
+  color: green;
+  border: none;
+  cursor: pointer;
+}
+
+.language > button:hover {
+  scale: 1.09;
+}

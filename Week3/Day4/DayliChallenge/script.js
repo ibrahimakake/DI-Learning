@@ -21,15 +21,18 @@ Example:
   Your string is : 'This dinner is bad !' 
   --> the result is : 'This dinner is bad !'*/
 
-let sentence = "MMA is not that bad , I like it"
+let sentence = "MMA is not that bad, I like it"
 let  wordNot = sentence.search("not")
 let wordBad = sentence.search("bad")
 
 /*console.log(sentence.slice(wordBad,28))*/
 
 if( wordBad > wordNot){
+
+  const modifiedSentence = sentence.substring(0, wordNot) + "good" + sentence.substring(wordBad + 3) + ".";
+  console.log(modifiedSentence)
   
-   console.log(sentence.replace("not that bad","good"))
+  // console.log(sentence.replace("not that bad","good"))
 
 }
 else{

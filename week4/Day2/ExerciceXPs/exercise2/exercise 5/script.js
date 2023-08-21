@@ -31,7 +31,7 @@ The function should return true, since having 25 quarters, 20 dimes, 5 nickels a
 
 function changeEnough(itemPrice,amounOfChange){
    console.log("The item price is "+ itemPrice)
-   let totalSum= sumResult(amounOfChange)
+   let totalSum = sumResult(amounOfChange)
      if(itemPrice <= totalSum){
       console.log("you can afford it !!")
         return true

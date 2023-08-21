@@ -56,10 +56,10 @@ For example,
 For 1 bottle, you pass “it” around.
 For more than one bottle, you pass “them” around.
 
- */
 
+*/
 
-let userAnswer = Number(prompt("Please enter a number to begin the game"))
+let userAnswer = parseInt(prompt("Please enter a number to begin the game"))
  
 let numberOfBeerToTakeAway = 1;
 
@@ -77,11 +77,11 @@ do{
 }while( userAnswer > numberOfBeerToTakeAway)
 
 
-let rest= userAnswer-numberOfBeerToTakeAway
+let rest = userAnswer - numberOfBeerToTakeAway
 
 let bottleOrBottles = getBottleOrBottles(userAnswer)
 
-let itOrThem =getItOrThem(rest)
+let itOrThem = getItOrThem(rest)
 
 console.log(`${userAnswer} ${bottleOrBottles} of beer on the wall
 ${userAnswer}  ${bottleOrBottles} of beer
@@ -103,7 +103,8 @@ function getBeer(num,counter){
          beer = `${num} ${bottleOrBottles} of beer on the wall
       ${num}  ${bottleOrBottles} of beer
       Take ${counter}  down, pass ${itOrThem} around
-      ${rest} ${ getBottleOrBottles(rest)} of beer on the wall`;}
+      ${rest} ${ getBottleOrBottles(rest)} of beer on the wall`;
+      }
 
       return beer
 
@@ -141,3 +142,21 @@ function getItOrThem(counter){
         return "them"
     }
 }
+
+ 
+/*
+// Prompt the user for a number of bottles to begin with
+let userAnswer = parseInt(prompt("Please enter a number of bottles to begin the game"));
+
+// Loop to generate the lyrics
+for (let bottles = userAnswer; bottles > 0; bottles--) {
+    let bottlesToTakeAway = bottles === 1 ? "1 bottle" : `${bottles} bottles`;
+    let passAround = bottles === 1 ? "it" : "them";
+    let remainingBottles = bottles - 1 === 1 ? "1 bottle" : `${bottles - 1} bottles`;
+
+    console.log(`${bottlesToTakeAway} of beer on the wall
+${bottlesToTakeAway} of beer
+Take 1 down, pass ${passAround} around
+${remainingBottles} of beer on the wall`);
+}
+*/

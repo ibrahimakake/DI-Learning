@@ -18,9 +18,9 @@ let number = 7 ;
 let stars = ""
 
 for (let i = 0; i< number; i++){
-   console.log( stars = stars +" * ")
+  stars += " *"
+   console.log( stars)
 }
-
 
 // neste loop
 
@@ -28,12 +28,12 @@ let maxNumber = 6
 
 for (let i = 0;i < maxNumber;i++){
      
-    const numberofStars = i + 1
-    let lineofStars =""
-    for (let j= 0;j < numberofStars;j++){
-        lineofStars = lineofStars + " * "
+    const numberOfStars = i + 1
+    let lineOfStars =""
+    for (let j= 0;j < numberOfStars;j++){
+        lineOfStars += " * "
     } 
-        console. log (lineofStars)
+        console. log (lineOfStars)
   
 }
    

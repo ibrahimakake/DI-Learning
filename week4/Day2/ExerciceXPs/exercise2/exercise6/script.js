@@ -35,7 +35,7 @@ Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt
 
 //hotelCost()
 
-let userAnswer;
+/*let userAnswer;
 
 let destination ;
 
@@ -78,6 +78,8 @@ console.log("Your vaction cost is: $"+ totalCost)
 
 }
  totalVacationCost()
+
+
 
 hotelCost()
 
@@ -141,6 +143,62 @@ if(rental<10){
  function justNumbers(numm){
    let regex = new RegExp(/^[0-9]*$/)
    return regex.test(numm)
- }
+ }*/
 
- 
+ function totalVacationCost() {
+   let numberOfNights;
+   let destination;
+   let carRentalDays;
+
+   // Input validation and gathering
+   do {
+       numberOfNights = parseInt(prompt("How many nights would you like to stay?"));
+   } while (isNaN(numberOfNights) || numberOfNights <= 0);
+
+   do {
+       destination = prompt("What is your destination?");
+   } while (!destination || destination.trim() === "");
+
+   do {
+       carRentalDays = parseInt(prompt("For how many days do you want to rent a car?"));
+   } while (isNaN(carRentalDays) || carRentalDays <= 0);
+
+   // Calculate costs
+   const hotelCost = hotelCost(numberOfNights);
+   const planeTicketCost = planeRideCost(destination);
+   const carRentalCost = rentalCarCost(carRentalDays);
+   const totalCost = hotelCost + planeTicketCost + carRentalCost;
+
+   // Display results
+   console.log(`Hotel cost: $${hotelCost}`);
+   console.log(`Plane tickets cost: $${planeTicketCost}`);
+   console.log(`Car rental cost: $${carRentalCost}`);
+   console.log(`Total vacation cost: $${totalCost}`);
+}
+
+// Call the main function
+totalVacationCost();
+
+function hotelCost(nights) {
+   const nightCost = 140;
+   return nights * nightCost;
+}
+
+function planeRideCost(destination) {
+   if (destination === "London") {
+       return 183;
+   } else if (destination === "Paris") {
+       return 220;
+   } else {
+       return 300;
+   }
+}
+
+function rentalCarCost(days) {
+   const costPerDay = 40;
+   let totalCost = costPerDay * days;
+   if (days > 10) {
+       totalCost *= 0.95; // Apply 5% discount
+   }
+   return totalCost;
+}

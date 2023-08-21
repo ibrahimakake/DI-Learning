@@ -55,55 +55,45 @@ Bonus
 In the First Part, instead of stopping the process if the user didn’t enter a valid number. Continue asking for a number until the user enters a valid number.
  */
 
-function playTheGame(){
-    let answer1 = confirm("Would you like to play the game ?");
-    if(answer1===false){
+function playTheGame() {
+    const shouldPlay = confirm("Would you like to play the game ?");
+    
+    if (!shouldPlay) {
         alert("No problem, Goodbye");
+        return;
     }
-    /*else{
-     let answer2 = prompt("please enter a number between 0 and 10")
-     if (isNaN(answer2)){
-        alert("Sorry Not a number, Goodbye");
-     }
-     else if(answer2 < 0 || answer2 >10){
-        alert("Sorry it’s not a good number, Goodbye");
-     }*/
 
-       let answer2;
-     do{
-         answer2 = prompt("please enter a number between 0 and 10")
-
-     }while(isNaN(answer2) || answer2 < 0 || answer2 >10)
-    
-        let computerNumber = Math.floor(Math.random()*11) 
-        compareNumbers(answer2, computerNumber)
+    const userNumber = getUserNumber();
    
-    }
-     
-
-
-function compareNumbers(userNumber,computerNumber){
-    for(let i = 0; i<3; i++){
-        if(userNumber==computerNumber){
-            alert("WINNER");
-            break;
-        }
-        else if( i == 2 && userNumber != computerNumber ){
-            alert("out of changes");
-        
-    }
-        else if(userNumber>computerNumber){
-            alert("Your number is bigger then the computer’s, guess again");
-            userNumber = prompt("Enter a new number");
-            
-        }
-        else if(userNumber<computerNumber){
-            alert("Your number is smaller then the computer’s, guess again");
-            userNumber = prompt("Enter a new number");
-            
-        }
-        
-    
-   }
-
+    let computerNumber = Math.floor(Math.random()*11) 
+    compareNumbers(userNumber, computerNumber);
 }
+
+function getUserNumber() {
+    let userNumber;
+    do {
+        userNumber = parseInt(prompt("Please enter a number between 0 and 10"));
+    } while (isNaN(userNumber) || userNumber < 0 || userNumber > 10);
+    return userNumber;
+}
+
+
+function compareNumbers(userNumber, computerNumber) {
+    for (let i = 0; i < 3; i++) {
+        if (userNumber === computerNumber) {
+            alert("WINNER");
+            return;
+        } else if (i === 2) {
+            alert("Out of chances");
+            return;
+        } else if (userNumber > computerNumber) {
+            userNumber = getUserNumber();
+            alert("Your number is bigger than the computer's, guess again");
+        } else if (userNumber < computerNumber) {
+            userNumber = getUserNumber();
+            alert("Your number is smaller than the computer's, guess again");
+        }
+    }
+}
+
+playTheGame();

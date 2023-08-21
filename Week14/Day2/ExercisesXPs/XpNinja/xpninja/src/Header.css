@@ -1,0 +1,11 @@
+.navbar{
+    background-color: rgb(255, 71, 71);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 15%;
+    width: 100%;
+    color: white;
+    font-family: verdana;
+}
