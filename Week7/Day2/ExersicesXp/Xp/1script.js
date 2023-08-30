@@ -9,7 +9,7 @@ const vegetables = ["carrot", "potato"];
 
 const result = ['bread', ...vegetables, 'chicken', ...fruits];
 
-// The output will be : [ "bread","apple","orange","carrot", "potato"]
+// The output will be : [ "bread","apple","orange","carrot", "potato","chicken"]
 
 
 console.log(result);

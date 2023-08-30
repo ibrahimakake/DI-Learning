@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunrise Time</title>
+</head>
+<body>
+  <form id="cityForm">
+    <label for="parisLat">Paris Latitude:</label>
+    <input type="text" id="parisLat" >
+    <label for="parisLong">Paris Longitude:</label>
+    <input type="text" id="parisLong" >
+    
+    <label for="nyLat">New York Latitude:</label>
+    <input type="text" id="nyLat" >
+    <label for="nyLong">New York Longitude:</label>
+    <input type="text" id="nyLong" >
+    
+    <button type="button" id="getSunrise">Get Sunrise Time</button>
+  </form>
+  
+  <div id="result">
+    <p>Paris Sunrise Time: <span id="parisTime"></span></p>
+    <p>New York Sunrise Time: <span id="nyTime"></span></p>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

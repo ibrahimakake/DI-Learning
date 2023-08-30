@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="letterInput" placeholder="Enter letters only">
+
+    <script>
+    const letterInput = document.getElementById("letterInput");
+    
+    letterInput.addEventListener("input", function(event) {
+      const inputText = event.target.value;
+      const onlyLetters = inputText.replace(/[^a-zA-Z]/g, "");
+      event.target.value = onlyLetters;
+      console.log(onlyLetters)
+    });
+    </script>
+</body>
+</html>

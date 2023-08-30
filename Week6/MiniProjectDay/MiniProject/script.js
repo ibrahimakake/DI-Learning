@@ -102,8 +102,9 @@ function numberOfWords(e){
                     element.like = 1
                     span4.innerHTML = `The number of like of this quote is : ${element.like}`
                 }else{ 
-                  span4.innerHTML =  ++x.like
-                  span4.innerHTML = `The number of like of this quote is : ${++x.like}`
+                    element.like += 1
+                 // span4.innerHTML =  ++x.like
+                  span4.innerHTML = `The number of like of this quote is : ${element.like}`
                 }
              }
 
@@ -125,7 +126,7 @@ function numberOfWords(e){
     if(authorName!= ""){
     var tempQuote = []
         objects.forEach((val) => {
-            if(val.author == authorName) {
+            if(val.author.toLocaleLowerCase() == authorName.toLocaleLowerCase()) {
                 tempQuote.push(val)
             }
         })
@@ -138,27 +139,33 @@ function numberOfWords(e){
 
    }
 
-   let previousButton = document.getElementById("previous")
-   let nextButton = document.getElementById("next")
+   let previousButton = document.getElementById("previous");
+let nextButton = document.getElementById("next");
 
-   previousButton.addEventListener("click",function(e){
-   e.preventDefault()
+previousButton.addEventListener("click", function(e) {
+    e.preventDefault();
 
-   objects.forEach(function(element,index,array){
-    if (h3.innerHTML == array[index].quote) h3.innerHTML == array[index-1].quote
-   })
+    for (let i = 0; i < objects.length; i++) {
+        if (h3.innerHTML === objects[i].quote) {
+            if (i > 0) {
+                h3.innerHTML = objects[i - 1].quote;
+            }
+            break;
+        }
+    }
+});
 
-   })
+nextButton.addEventListener("click", function(e) {
+    e.preventDefault();
 
-   nextButton.addEventListener("click",function(e){
-    e.preventDefault()
- 
-    objects.forEach(function(element,index,array){
-     if (h3.innerHTML == array[index].quote) h3.innerHTML == array[index+1].quote
-    })
- 
-    })
- 
-
+    for (let i = 0; i < objects.length; i++) {
+        if (h3.innerHTML === objects[i].quote) {
+            if (i < objects.length - 1) {
+                h3.innerHTML = objects[i + 1].quote;
+            }
+            break;
+        }
+    }
+});
 
    
