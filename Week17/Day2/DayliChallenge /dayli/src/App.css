@@ -1,0 +1,22 @@
+body{
+  padding: 0;
+  background-image: linear-gradient(to left, #071b52, teal);
+}
+
+h1.title{
+  font-family: 'SEGA LOGO FONT', sans-serif;
+  font-weight: 200;  
+  color: #0ccac4;   
+  text-align: center;                                       
+}
+
+.robot-container{
+  border: 1px solid black;
+}
+
+.title{
+  font-family: 'SEGA LOGO FONT', sans-serif;
+  font-weight: 200;  
+  color: #0ccac4;   
+  text-align: center;                                       
+}

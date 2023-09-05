@@ -1,19 +1,23 @@
-<!-- loginForm.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form</title>
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formstyle.css">
+    <title>Login page</title>
 </head>
 <body>
-  <h1>Login</h1>
-  <form id="login-form">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit" disabled>Login</button>
-  </form>
-  <script src="script.js"></script>
+    <div class="container">
+        <form id="LoginForm" action="http://localhost:7500/loginForm" method="GET" target="_blank">
+            <h1>Login :</h1>
+            <div class="ro"><label for="username">Username : </label><input type="text" id="username"></div>
+            <div class="ro"><label for="password">Password : </label><input type="password" id="password"></div>
+            <hr>
+            <button id="login" type="submit" disabled>Login</button>
+        </form>
+        <div id="showLogin" class="screen"></div>
+    </div>
+​
+    <script src="logscript.js"></script>
 </body>
 </html>

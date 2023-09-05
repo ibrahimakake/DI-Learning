@@ -9,7 +9,7 @@ function Phone(){
     year: 2020})
 
 const changeColor = ()=>{
-    const copyState={...phoneInfo}
+    const copyState = {...phoneInfo}
     copyState.color="blue"
    setPhoneInfo(copyState)
 }

@@ -1,0 +1,54 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+ h1{
+  margin-top: 0;
+ }
+
+ .navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+ }
+.navbar ,
+.rules{
+background-color: red;
+color: white;
+margin-bottom: 3px;
+box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+
+}
+.heroes-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  text-align: center;
+  gap: 3rem;
+  padding: 2rem ;
+
+}
+.heroe-card{
+   border: 3px solid grey;
+   border-radius: 3px;
+   box-shadow: 0 3px #999, 0 3px 6px #999;
+   height: 400px;
+   cursor: pointer;
+   transition: all 0.2s;
+}
+.heroe-card:hover{
+  scale: 1.03;
+  box-shadow:0 12px 24px #999, 0 12px 24px #999 ;
+}
+.heroe-card img{
+   width: 80%;
+  
+}
+.heroe-card .image-container{
+  height: 80%;
+  overflow: hidden;
+}
+.bold{
+  font-weight: 700;
+}
+

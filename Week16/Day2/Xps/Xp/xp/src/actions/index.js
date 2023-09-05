@@ -1,0 +1,10 @@
+const ACTION = {
+    INCREMENT : "INCREMENT",
+    DECREMENT : "DECREMENT"
+}
+
+
+
+
+export const INCREMENT_ACTION ={type:ACTION.INCREMENT}
+export const DECREMENT_ACTION ={type:ACTION.DECREMENT}
